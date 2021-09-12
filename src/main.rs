@@ -1,3 +1,5 @@
+mod hello_cargo;
 fn main() {
-    println!("Hello, world!");
+    let c = hello_cargo::guess::del();
+    println!("Hello, world! {}", c);
 }
