@@ -1,5 +1,4 @@
-mod hello_cargo;
+mod class01;
 fn main() {
-    let c = hello_cargo::guess::del();
-    println!("Hello, world! {}", c);
+    class01::problem01::printing::run()
 }
