@@ -1,4 +1,4 @@
-/* pub fn run() {
+pub fn run() {
     // positional args
     println!(
         "Hello {0} your {1} has {2} {0}!",
@@ -21,4 +21,3 @@
     // math
     println!("Two cats and dogs rain: {}", 5 + 5);
 }
- */

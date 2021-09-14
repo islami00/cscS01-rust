@@ -1,4 +1,4 @@
-mod class01;
+mod class02;
 fn main() {
-    class01::problem04::strings::run();
+    class02::problem07::vecs::run();
 }
