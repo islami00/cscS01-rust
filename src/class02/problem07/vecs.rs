@@ -89,15 +89,32 @@ pub fn run() {
     if let Social::Twitter(i) = &cads {
         println!("Is this it? {:?}", i)
     }
+    // Testing ord for vecs. They implement lexicographic ordering. Hence, in the case where we have n elements with n vecs, the first vec determines order.
+    // This is between storages, now what of internally?
+    #[derive(Ord, Eq, PartialOrd, PartialEq, Debug)]
+    struct S(Vec<Vec<u8>>);
+    let mut v12: S = S(vec![vec![1, 2, 3], vec![123, 132, 13], vec![112, 123]]);
+    let v21: S = S(vec![vec![21, 123, 123], vec![132, 123]]);
+
     // testing enum eq
     let x2 = cads.eq(&cads2);
     // testing Vec<u8> eq
     let x = na.eq(&ya);
     let z = this_vector;
+    //strs
+    let strinnnng = "sadasd".to_lowercase();
     println!("Copy? {:?}", z);
     // items with copy trait  can be copied by simply reffing them elsewhere, won't go out of scope.
     println!("Were they equal? {:?}", x);
     println!("Is this a string? {:?}", cads);
     println!("Were the two abstracted equal? {:?}", x2);
-    println!("Does it have duplicates? {:?}", isrnd)
+    println!("Does it have duplicates? {:?}", isrnd);
+    // this assertion is meaningless for the test as we won't be comparing our storage
+    println!("Is it less ? {:?}", v12.0 < v21.0);
+    // this sorting works...hence we can rely on binary search to be exact
+    println!("Merge sort ? {:?}", {
+        v12.0.sort();
+        v12.0
+    });
+    println!("Does it erR? {}", strinnnng)
 }
